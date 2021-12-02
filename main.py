@@ -7,7 +7,7 @@ import pdb
 import logging
 from replit import db
 
- 
+asdfadfasdfaf
 
 client = discord.Client()
 
