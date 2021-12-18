@@ -1,15 +1,15 @@
 import discord
+import asyncio
 import os
 import requests
 import json
 import random
 import pdb
-import logging
 from replit import db
+from discord.ext import commands
 
-asdfadfasdfaf
-
-client = discord.Client()
+#client = discord.Client()
+bot = commands.Bot(command_prefix='.')
 
 up_trigger_words = ["whats up", "wats up", "was up", "whats up?", "wats up?","waz up", "wuz up", "whaz up","what is up", "what is up?", "wat is up"]
 up_response = "It's a Pixar movie!"
@@ -49,13 +49,14 @@ def delete_encouragment(index):
   db["encouragements"] = encouragements
 
 
-@client.event
+@bot.event
 async def on_ready():
-  print("We have logged in as {0.user}".format(client))
+  print("We have logged in as {0.user}".format(bot))
 
-@client.event
+@bot.event
 async def on_message(message):
-  if message.author == client.user:
+  await bot.process_commands(message)
+  if message.author == bot.user:
     return
 
   msg = message.content
@@ -75,8 +76,8 @@ async def on_message(message):
     if "encouragements" in db.keys():
       options = options + db["encouragements"].value
 
-    if any(word in msg for word in sad_words):
-      await message.channel.send(random.choice(options))
+    # if any(word in msg for word in sad_words):
+    #   await message.channel.send(random.choice(options))
     
     # this is up pasta  
     if any(word in msg for word in up_trigger_words):
@@ -117,6 +118,38 @@ async def on_message(message):
       print(encouragements)
     await message.channel.send(encouragements)
 
+@bot.command()
+async def test(ctx, arg):
+  await ctx.send(arg)
+
+@bot.command()
+async def bruh(context):
+    await playSound(context, "power.mp3")
+
+# plays a specific sound in voice channel
+async def playSound(context, soundFile):
+  # grab the user who sent the command
+    user=context.message.author
+    voice_channel=user.voice.channel
+    channel=None
+    # only play music if user is in a voice channel
+    if voice_channel!= None:
+        # grab user's voice channel
+        channel=voice_channel.name
+        await context.send('User is in channel: '+ channel)
+        # create StreamPlayer
+        vc = await voice_channel.connect()
+        vc.play(discord.FFmpegPCMAudio(soundFile), after=lambda e: print('done', e))
+        while vc.is_playing():
+          await asyncio.sleep(1)
+        # disconnect after the player has finished
+        vc.stop()
+        await vc.disconnect()
+    else:
+        await bot.say('User is not in a channel.')
+
 my_secret = os.environ['TOKEN']
-client.run(os.getenv("TOKEN"))
+bot.run(os.getenv("TOKEN"))
+
+#client.run(os.getenv("TOKEN"))
 
