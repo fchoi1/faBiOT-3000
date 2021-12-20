@@ -9,7 +9,9 @@ from replit import db
 from discord.ext import commands
 import builtins
 
+from dotenv import load_dotenv
 
+load_dotenv() 
 
 intents = discord.Intents.default()
 intents.members = True 
@@ -37,8 +39,8 @@ starter_encouragements = [
     "Cheer up!", "Hang in there.", "You are a great person / bot!"
 ]
 
-if "responding" not in db.keys():
-    db["responding"] = True
+# if "responding" not in db.keys():
+#     db["responding"] = True
 
 
 def get_quote():
