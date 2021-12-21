@@ -16,7 +16,7 @@ trigger_sleep_min: 0
 trigger_sleep_max: 0
 
 # The Discord User IDs that are allowed to run bot commands
-allowed_command_user_ids: [144300073210085376]
+allowed_command_user_ids: []
 
 # The path to the audio clip to play before kicking a user
 audio_clip_filepath: "./soundClips/omg.mp3"

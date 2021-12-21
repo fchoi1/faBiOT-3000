@@ -7,7 +7,6 @@ from builtins import bot
 
 from typing import Optional, List, Tuple
 
-
 # Conversion from sec to min
 MIN = 60
 
@@ -22,7 +21,6 @@ async def start_a_tour(guild):
     if voice_channel is None:
       print("No one in voice channel to prank")
       return
-
 
     async def kick_member_and_disconnect():
         # Kick a random member
@@ -39,7 +37,6 @@ async def start_a_tour(guild):
             # If so, the user is kicked!
             random.shuffle(targeted_victims)
             for victim_user_id, percentage in targeted_victims:
-                print(victim_user_id, 'percentage', percentage)
                 # Check that this user is currently in the voice channel
                 if voice_channel.guild.get_member(victim_user_id) not in voice_channel.members:
                     continue
@@ -147,7 +144,6 @@ async def retrieve_active_voice_channel(guild):
 
     # Check if each channel is a VoiceChannel with active members
     for channel in guild.voice_channels:
-      #if channel.type.name == "voice":
         if len(channel.members) > 0:
             # We found an active voice channel!
             return channel
