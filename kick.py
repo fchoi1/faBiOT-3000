@@ -160,9 +160,9 @@ async def on_message(message):
     #if trigger_phrase and message.content.lower() == trigger_phrase.lower():
     if trigger_phrase.lower() in message.content.lower():
 
-        if message.author.id not in allowed_command_user_ids:
-            print("Rejecting non-authorized author id %d" % message.author.id)
-            return
+        # if message.author.id not in allowed_command_user_ids:
+        #     print("Rejecting non-authorized author id %d" % message.author.id)
+        #     return
 
         # Wait a random amount of time
         # (for sam to get online)
