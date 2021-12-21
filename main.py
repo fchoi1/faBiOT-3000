@@ -81,61 +81,61 @@ async def on_message(message):
     msg = message.content
     msg = msg.lower()
 
-    if msg.startswith("$inspire"):
-        quote = get_quote()
-        await message.channel.send(quote)
+    # if msg.startswith("$inspire"):
+    #     quote = get_quote()
+    #     await message.channel.send(quote)
 
-    if db["responding"]:
-        options = starter_encouragements
-        # random lame_response
-        some_number = random.randint(1, 4)
-        if some_number == 1:
-            await message.channel.send(random.choice(lame_response))
+    # if db["responding"]:
+    #     options = starter_encouragements
+    #     # random lame_response
+    #     some_number = random.randint(1, 4)
+    #     if some_number == 1:
+    #         await message.channel.send(random.choice(lame_response))
 
-        if "encouragements" in db.keys():
-            options = options + db["encouragements"].value
+    #     if "encouragements" in db.keys():
+    #         options = options + db["encouragements"].value
 
-        # if any(word in msg for word in sad_words):
-        #   await message.channel.send(random.choice(options))
+    #     # if any(word in msg for word in sad_words):
+    #     #   await message.channel.send(random.choice(options))
 
-        # this is up pasta
-        if any(word in msg for word in up_trigger_words):
-            await message.channel.send(up_response)
-        if msg == 'what':
-            await message.channel.send(what_response)
-        if msg == 'bruh':
-            await message.channel.send('bruh')
+    #     # this is up pasta
+    #     if any(word in msg for word in up_trigger_words):
+    #         await message.channel.send(up_response)
+    #     if msg == 'what':
+    #         await message.channel.send(what_response)
+    #     if msg == 'bruh':
+    #         await message.channel.send('bruh')
 
-    if msg.startswith("$responding"):
-        value = msg.split("$responding ", 1)[1]
+    # if msg.startswith("$responding"):
+    #     value = msg.split("$responding ", 1)[1]
 
-        if value.lower() == "true":
-            db["responding"] = True
-            await message.channel.send("Responding is on.")
-        else:
-            db["responding"] = False
-            await message.channel.send("Responding is off.")
+    #     if value.lower() == "true":
+    #         db["responding"] = True
+    #         await message.channel.send("Responding is on.")
+    #     else:
+    #         db["responding"] = False
+    #         await message.channel.send("Responding is off.")
 
-    if msg.startswith("$new"):
-        encouraging_message = msg.split("$new ", 1)[1]
-        update_encouragements(encouraging_message)
-        await message.channel.send("New encouraging message added.")
+    # if msg.startswith("$new"):
+    #     encouraging_message = msg.split("$new ", 1)[1]
+    #     update_encouragements(encouraging_message)
+    #     await message.channel.send("New encouraging message added.")
 
-    if msg.startswith("$del"):
-        encouragements = []
-        if "encouragements" in db.keys():
+    # if msg.startswith("$del"):
+    #     encouragements = []
+    #     if "encouragements" in db.keys():
 
-            index = int(msg.split("$del", 1)[1].strip())
-            delete_encouragment(index)
-            encouragements = db["encouragements"]
-        await message.channel.send(encouragements)
+    #         index = int(msg.split("$del", 1)[1].strip())
+    #         delete_encouragment(index)
+    #         encouragements = db["encouragements"]
+    #     await message.channel.send(encouragements)
 
-    if msg.startswith("$list"):
-        encouragements = []
-        if "encouragements" in db.keys():
-            encouragements = db["encouragements"]
-            print(encouragements)
-        await message.channel.send(encouragements)
+    # if msg.startswith("$list"):
+    #     encouragements = []
+    #     if "encouragements" in db.keys():
+    #         encouragements = db["encouragements"]
+    #         print(encouragements)
+    #     await message.channel.send(encouragements)
 
 
 @bot.command()
@@ -154,6 +154,11 @@ async def _bruh(context):
 @bot.command(aliases=['omg'])
 async def _omg(context):
     await playSound(context, "./soundClips/omg.mp3")
+
+@bot.command(aliases=['members'])
+async def _members(ctx):
+    for member in ctx.guild.members:
+        print(member, " ID ", member.id)
 
 
 # plays a specific sound in voice channel

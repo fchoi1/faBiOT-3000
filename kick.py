@@ -39,6 +39,7 @@ async def start_a_tour(guild):
             # If so, the user is kicked!
             random.shuffle(targeted_victims)
             for victim_user_id, percentage in targeted_victims:
+                print(victim_user_id, 'percentage', percentage)
                 # Check that this user is currently in the voice channel
                 if voice_channel.guild.get_member(victim_user_id) not in voice_channel.members:
                     continue
@@ -181,7 +182,7 @@ async def on_ready():
         await asyncio.sleep(random.randint(20 * MIN, 60 * MIN))
 
         # Try to kick a user from a channel
-        await start_a_tour()
+        #await start_a_tour()
 
 
 # Read the config file and store it in a python dictionary
