@@ -36,10 +36,14 @@ async def start_a_tour(guild):
             #
             # So if kick percentage is 0.2, multiply that by 100 to get 20.
             # Then check if the random number is less than or equal to 20.
+
             # If so, the user is kicked!
             random.shuffle(targeted_victims)
-            for victim_user_id, percentage in targeted_victims:
+            print(targeted_victims, 'is there')
+
+            for [victim_user_id, percentage] in targeted_victims:
                 # Check that this user is currently in the voice channel
+                print(victim_user_id, 'is here')
                 if voice_channel.guild.get_member(victim_user_id) not in voice_channel.members:
                     continue
 
@@ -197,7 +201,6 @@ after_picture_messages = config.get("after_picture_messages", [])
 between_picture_delay = config.get("between_picture_delay", 0)
 
 targeted_victims: List[Tuple[int, float]] = config.get("targeted_victims", [])
-
 trigger_phrase = config.get("trigger_phrase", "")
 trigger_sleep_min = config.get("trigger_sleep_min", 0)
 trigger_sleep_max = config.get("trigger_sleep_max", 0)

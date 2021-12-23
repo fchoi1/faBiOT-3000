@@ -52,4 +52,4 @@ after_picture_messages: ['You got kicked lmao']
 # targeted_victims:
 #   - [1234567890, 0.5]
 #   - [0987654321, 0.1]
-targeted_victims: []
+targeted_victims: [144300073210085376, 1]

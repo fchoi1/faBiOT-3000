@@ -153,6 +153,11 @@ async def _bruh(context):
 async def _omg(context):
     await playSound(context, "./soundClips/omg.mp3")
 
+@bot.command(aliases=['members', 'getmembers'])
+async def _members(ctx):
+    for guild in bot.guilds:
+        for member in guild.members:
+            print(member, ' id ', member.id)
 
 # plays a specific sound in voice channel
 async def playSound(context, soundFile):
@@ -181,6 +186,7 @@ async def playSound(context, soundFile):
 
 
 my_secret = os.environ['dgsToken']
+#bot.run(os.getenv("TOKEN"))
 #bot.run(os.getenv("TOKEN"))
 bot.run(my_secret)
 
