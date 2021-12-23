@@ -150,6 +150,11 @@ async def _power(context):
 async def _bruh(context):
     await playSound(context, "./soundClips/bruh.mp3")
 
+@bot.command(aliases=['shet'])
+async def _shet(context):
+    await playSound(context, "./soundClips/disgusting.mp3")
+
+
 
 @bot.command(aliases=['omg'])
 async def _omg(context):
