@@ -154,7 +154,25 @@ async def _bruh(context):
 async def _shet(context):
     await playSound(context, "./soundClips/disgusting.mp3")
 
+@bot.command(aliases=['globin'])
+async def _globin(context):
+    await playSound(context, "./soundClips/globin.mp3")
 
+@bot.command(aliases=['dirt'])
+async def _dirt(context):
+    await playSound(context, "./soundClips/dirt.mp3")
+
+@bot.command(aliases=['serious'])
+async def _serious(context):
+    await playSound(context, "./soundClips/you_serious.mp3")
+
+@bot.command(aliases=['scientist'])
+async def _scientist(context):
+    await playSound(context, "./soundClips/scientist.mp3")
+
+@bot.command(aliases=['pizza'])
+async def _pizza(context):
+    await playSound(context, "./soundClips/pizza.mp3")
 
 @bot.command(aliases=['omg'])
 async def _omg(context):
