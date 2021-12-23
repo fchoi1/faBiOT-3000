@@ -11,13 +11,11 @@ import builtins
 
 from dotenv import load_dotenv
 
-load_dotenv() 
+load_dotenv()
 
 intents = discord.Intents.default()
-intents.members = True 
+intents.members = True
 intents = discord.Intents().all()
-
-
 
 #client = discord.Client()
 bot = commands.Bot(command_prefix='.', intents=intents)
@@ -142,41 +140,51 @@ async def on_message(message):
 async def test(ctx, arg):
     await ctx.send(arg)
 
+
 @bot.command(aliases=['power'])
 async def _power(context):
     await playSound(context, "./soundClips/power.mp3")
+
 
 @bot.command(aliases=['bruh'])
 async def _bruh(context):
     await playSound(context, "./soundClips/bruh.mp3")
 
+
 @bot.command(aliases=['shet'])
 async def _shet(context):
     await playSound(context, "./soundClips/disgusting.mp3")
+
 
 @bot.command(aliases=['globin'])
 async def _globin(context):
     await playSound(context, "./soundClips/globin.mp3")
 
+
 @bot.command(aliases=['dirt'])
 async def _dirt(context):
     await playSound(context, "./soundClips/dirt.mp3")
+
 
 @bot.command(aliases=['serious'])
 async def _serious(context):
     await playSound(context, "./soundClips/you_serious.mp3")
 
+
 @bot.command(aliases=['scientist'])
 async def _scientist(context):
     await playSound(context, "./soundClips/scientist.mp3")
+
 
 @bot.command(aliases=['pizza'])
 async def _pizza(context):
     await playSound(context, "./soundClips/pizza.mp3")
 
+
 @bot.command(aliases=['omg'])
 async def _omg(context):
     await playSound(context, "./soundClips/omg.mp3")
+
 
 @bot.command(aliases=['members'])
 async def _members(ctx):
@@ -195,7 +203,7 @@ async def playSound(context, soundFile):
 
         # grab user's voice channel
         channel = voice_channel.name
-        
+
         await context.send('User is in channel: ' + channel)
         # create StreamPlayer
         vc = await voice_channel.connect()
@@ -213,7 +221,5 @@ async def playSound(context, soundFile):
 my_secret = os.environ['dgsToken']
 #bot.run(os.getenv("TOKEN"))
 bot.run(my_secret)
-
-
 
 #client.run(os.getenv("TOKEN"))
