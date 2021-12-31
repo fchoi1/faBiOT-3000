@@ -1,0 +1,58 @@
+aiohttp==3.7.4.post0
+async-timeout==3.0.1
+attrs==21.2.0
+backports.entry-points-selectable==1.1.1
+CacheControl==0.12.10
+cachy==0.3.0
+certifi==2021.10.8
+cffi @ file:///A:/Users/maste/AppData/Local/pypoetry/Cache/artifacts/69/b5/fa/f959f329c72fa75242242a6195feaf23d94bbf692ecb173fc19896707e/cffi-1.15.0-cp310-cp310-win_amd64.whl
+chardet==4.0.0
+charset-normalizer==2.0.9
+cleo==0.8.1
+click==8.0.3
+clikit==0.6.2
+colorama==0.4.4
+crashtest==0.3.1
+discord==1.7.3
+discord.py==1.7.3
+distlib==0.3.4
+ffmpeg==1.4
+filelock==3.4.0
+Flask==2.0.2
+html5lib==1.1
+idna==3.3
+itsdangerous==2.0.1
+Jinja2==3.0.3
+keyring==21.8.0
+lockfile==0.12.2
+MarkupSafe==2.0.1
+msgpack==1.0.3
+multidict==5.2.0
+packaging==20.9
+pastel==0.2.1
+pexpect==4.8.0
+pkginfo==1.8.2
+platformdirs==2.4.0
+poetry==1.1.12
+poetry-core==1.0.7
+ptyprocess==0.7.0
+pyaml @ file:///A:/Users/maste/AppData/Local/pypoetry/Cache/artifacts/d4/cd/26/c0bf5e448c0ded29e410e6e41cd2446ea4e218231e7fc23661e45d3cf6/pyaml-21.10.1-py2.py3-none-any.whl
+pycparser @ file:///A:/Users/maste/AppData/Local/pypoetry/Cache/artifacts/08/b1/1b/4618699096207aa9eba9fa35118b2b6544fd1c9c2a79ea3601a3d325a0/pycparser-2.21-py2.py3-none-any.whl
+pylev==1.4.0
+PyNaCl @ file:///A:/Users/maste/AppData/Local/pypoetry/Cache/artifacts/90/57/ef/ab3808c186a0d3fcc9e70e4940a185510c622c0e5b285e52090c6b9429/PyNaCl-1.4.0-cp35-abi3-win_amd64.whl
+pyparsing==3.0.6
+python-dotenv==0.19.2
+pywin32-ctypes==0.2.0
+PyYAML @ file:///A:/Users/maste/AppData/Local/pypoetry/Cache/artifacts/35/4d/45/b2142abd2ac771fdc795573de08522db0ff795d8e0a5c06f8baf9833e9/PyYAML-6.0-cp310-cp310-win_amd64.whl
+replit==3.2.4
+requests==2.26.0
+requests-toolbelt==0.9.1
+shellingham==1.4.0
+six==1.16.0
+tomlkit==0.8.0
+typing-extensions==3.10.0.2
+urllib3==1.26.7
+virtualenv==20.10.0
+webencodings==0.5.1
+Werkzeug==2.0.2
+yarl==1.7.2
