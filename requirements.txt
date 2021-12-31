@@ -5,7 +5,6 @@ backports.entry-points-selectable==1.1.1
 CacheControl==0.12.10
 cachy==0.3.0
 certifi==2021.10.8
-cffi @ file:///A:/Users/maste/AppData/Local/pypoetry/Cache/artifacts/69/b5/fa/f959f329c72fa75242242a6195feaf23d94bbf692ecb173fc19896707e/cffi-1.15.0-cp310-cp310-win_amd64.whl
 chardet==4.0.0
 charset-normalizer==2.0.9
 cleo==0.8.1
