@@ -140,6 +140,20 @@ async def on_message(message):
 async def test(ctx, arg):
     await ctx.send(arg)
 
+@bot.command(aliases=['clips'])
+async def _clips(context):
+    await context.send("""Sound commands
+    - power
+    - bruh
+    - shet
+    - globin
+    - dirt
+    - serious
+    - scientist
+    - pizza
+    - omg
+    - gotit
+    """)
 
 @bot.command(aliases=['power'])
 async def _power(context):
@@ -184,6 +198,10 @@ async def _pizza(context):
 @bot.command(aliases=['omg'])
 async def _omg(context):
     await playSound(context, "./soundClips/omg.mp3")
+    
+@bot.command(aliases=['gotit'])
+async def _gotit(context):
+    await playSound(context, "./soundClips/gotit.mp3")
 
 
 @bot.command(aliases=['members'])
